@@ -1,0 +1,16 @@
+.col-md-3
+  .card
+    - if user.avatar.to_s.present?
+      = image_tag user.avatar.small.to_s, class: "cart-img-top", style: "width: 100%; height: auto;"
+    - else
+      = image_tag "dummy-profile.jpg", class: "cart-img-top", style: "width: 100%; height: auto;"
+
+    .card-body
+      h5.card-title = user.name
+      h6.card-subtitle.text-muted = user.email
+      p.card-text style="height: 70px; overflow: hidden;" = user.status
+      p.card-text 
+        - if user_signed_in? && current_user.id == user.id
+          = link_to "Edit", edit_user_registration_path, class: "btn btn-sm btn-info"
+        - else
+          = link_to "Chat", chat_user_path(user), class: "btn btn-sm btn-primary"

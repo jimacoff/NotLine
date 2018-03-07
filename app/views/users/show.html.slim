@@ -1,0 +1,3 @@
+- content_for(:title) { "#{@user.name}'s Profile" }
+= render(partial: 'user', locals: {user: @user})
+

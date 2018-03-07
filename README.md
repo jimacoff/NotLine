@@ -9,32 +9,42 @@ NotLine
 
 # Pages Spec
 
+## Navbar
+- V bootstrap
+- V link: people, chat, sign in/up/out, edit info
+
 ## Login / Sign up
 
-- devise gem
-- email / twitter
+- V devise gem
+- V email
+- twitter
 
 ## User Info
 
-- url: `/users/info`(for current user), `/users/:id` (other user)
-- show: avatar, name, status
+- V url: `/users/:id`
+- V show: avatar, name, status
 
 ## Edit User Info
 
-- url: `/users/edit`
-- form: avatar, name, status
+- V url: `/users/edit`
+- V form: avatar, name, status
+
+## Edit User Password
+
+- V url: `/users/edit_password`
+- V form: current password, password, confirmation
 
 ## People
 
-- url: `/users`
-- list: all users, paged per 20, sort by name
-  - info: avatar, name, status
-  - link: Info(`/users/:id`)
-  - link: Chat(`/users/:id/chat`)
+- V url: `/users`
+- V list: all users, paged per 20, sort by name
+  - V info: avatar, name, status
+  - V link: Chat(`/users/:id/chat`)
 
 ## Chat List
 
 - url: `/chats/`
+- root redirect to this page
 - list: all chats of current user, paged per 20, sort by update time
   - info: last message, user(avatar, name)
   - link: `/chats/:id`

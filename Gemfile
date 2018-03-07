@@ -17,6 +17,9 @@ gem 'redis', '~> 4.0'
 gem 'capistrano-rails', group: :development
 gem 'devise'
 gem 'slim-rails'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'kaminari'
 
 group :development, :test do
   gem 'rspec-rails'
