@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "users#index"
+  root to: "chats#index"
 
   devise_for :users, controllers: {
     registrations: 'users/registrations'
