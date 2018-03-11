@@ -7,6 +7,7 @@ class ChatsController < ApplicationController
 
   def show
     @chat = Chat.find(params[:id])
+    @messages = @chat.messages.order(id: :desc).limit(50)
     @partner = @chat.partner_of(current_user)
     respond_to do |format|
       format.json

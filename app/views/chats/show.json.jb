@@ -1,5 +1,7 @@
 json = {
   id: @chat.id,
   title: @chat.title,
-  partner_id: @partner.id,
+  current_user: render(partial: 'users/user', locals: {user: current_user}),
+  partner: render(partial: 'users/user', locals: {user: @partner}),
+  messages: render(partial: 'messages/message', collection: @chat.messages),
 }

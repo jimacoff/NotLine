@@ -1,0 +1,8 @@
+json = {
+  id: message.id,
+  content: message.content,
+  chat_id: message.chat_id,
+  sender_id: message.sender_id,
+  recipient_id: message.recipient_id,
+  sent_at: message.created_at.iso8601,
+}

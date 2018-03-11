@@ -1,0 +1,11 @@
+json = {
+  id: user.id,
+  name: user.name,
+  status: user.status,
+  email: user.email,
+  avatar: {
+    original: user.avatar.to_s,
+    small: user.avatar.small.to_s,
+    thumb: user.avatar.thumb.to_s,
+  },
+}
