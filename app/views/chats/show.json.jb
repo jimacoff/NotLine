@@ -1,0 +1,5 @@
+json = {
+  id: @chat.id,
+  title: @chat.title,
+  partner_id: @partner.id,
+}

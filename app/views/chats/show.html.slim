@@ -1,0 +1,6 @@
+- content_for(:title) { "Chat with xxx" }
+h1 = content_for(:title)
+hr
+
+div#chat-data data-json="#{render(template: 'chats/show.json')}" style="display:none"
+= javascript_include_tag 'chat'
