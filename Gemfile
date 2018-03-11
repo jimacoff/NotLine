@@ -23,8 +23,10 @@ gem 'kaminari'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'database_cleaner'
   gem 'factory_bot_rails', require: false
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'shoulda-matchers'
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 end
