@@ -13,11 +13,11 @@ class ChatChannel < ApplicationCable::Channel
       reject_unauthorized_connection
     end
     message = chat.messages.build(data.symbolize_keys)
-    message.save
-    data['sent_at'] = message.created_at.iso8601
     ActionCable.server.broadcast("chat-#{chat.id}", data)
     chat.users.each do |user|
       ActionCable.server.broadcast("user-#{user.id}", data)
     end
+    message.save
+    chat.touch
   end
 end

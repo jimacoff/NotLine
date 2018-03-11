@@ -1,12 +1,6 @@
 NotLine
 ===
 
-# Installation
-
-# Deploy
-
-# Test
-
 # Pages Spec
 
 ## Navbar
@@ -54,13 +48,20 @@ NotLine
 - V url: `/chats/:id` or `/users/:user_id/chat` (redirect to corresponding chat)
 - V list: last 50 messages
   - V info: message(content, timestamp), user(avatar, name)
-- action: scroll up to load more 20 messages
+- action: click to load more 20 messages
+- auto scroll to bottom if not viewing old messages
+- show scroll to bottom if viewing old messages
+- fix navbar position
 - V use Action Cable to communicate with server
 - V form: 
   - V message content
   - V submit button (or press enter)
 - V update latest messages in this chat continuously
-- cache with redis
+- send "read until" to server
+
+## Messages API
+- V url: `/chats/:chat_id/messages`
+- V parameters: limit, offset
 
 # Models Spec
 
@@ -78,19 +79,19 @@ NotLine
 
 ## Message
 
-- V id, content, relative id, sender id, recipient id
+- V id, content, sender id, recipient id
 - V belongs to chat
 - V belongs to sender
 - V belongs to recipient
-- methods: last, next, from
-- save to redis instead of to db, a cron job saves messages in redis into db periodically
-
-## CachedMessageDecorator
-
-- decorates Message
-- methods: last, next, from
-- fetch messages from redis if exists, delegate to Message otherwise
+- read at
 
 # ActionCable
 
 - V can authorize user using the chat
+
+# Improvement
+- group chat
+- attachment
+- link detection
+- integrate chat to one page
+- show how many unreads

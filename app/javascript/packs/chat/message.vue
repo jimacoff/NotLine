@@ -10,7 +10,7 @@
                 </span>
             </div>
             <div class="card-footer">
-                {{ pretty_sent_at }}
+                {{ pretty_time }}
             </div>
         </div>
     </div>
@@ -25,8 +25,8 @@ module.exports = {
     methods: {
     },
     computed: {
-        pretty_sent_at: function() {
-            return moment(this.message.sent_at).format("YYYY.MM.DD HH:mm:ss")
+        pretty_time: function() {
+            return moment(this.message.created_at).format("YYYY.MM.DD HH:mm:ss")
         },
         avatarOrGravatar: function() {
             if (this.user.avatar.thumb) {

@@ -13,5 +13,7 @@ Rails.application.routes.draw do
       get 'chat', as: "chat"
     end
   end
-  resources :chats, only: [:index, :show]
+  resources :chats, only: [:index, :show] do
+    resources :messages, only: [:index]
+  end
 end

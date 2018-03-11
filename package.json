@@ -5,6 +5,7 @@
     "@rails/webpacker": "^3.3.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
     "css-loader": "^0.28.10",
     "gravatar": "^1.6.0",
     "javascript-time-ago": "^1.0.28",
@@ -15,7 +16,8 @@
     "vue-template-compiler": "^2.5.15",
     "vue-turbolinks": "^2.0.1",
     "vue-uuid": "^1.0.0",
-    "webpack": "^3.3.0"
+    "webpack": "^3.3.0",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "vue": "^2.5.15",

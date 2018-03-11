@@ -1,3 +1,5 @@
+import 'babel-polyfill'
+import 'whatwg-fetch'
 import Vue from 'vue/dist/vue.esm'
 import TurbolinksAdapter from 'vue-turbolinks'
 import Chatroom from './chat/chatroom.vue'

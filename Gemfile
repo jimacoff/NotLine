@@ -14,6 +14,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'turbolinks', '~> 5'
 gem 'jb'
 gem 'redis', '~> 4.0'
+gem 'redis-rails'
 gem 'capistrano-rails', group: :development
 gem 'devise'
 gem 'slim-rails'
