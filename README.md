@@ -52,35 +52,36 @@ NotLine
 
 ## Chat Room 
 - V url: `/chats/:id` or `/users/:user_id/chat` (redirect to corresponding chat)
-- list: last 50 messages
-  - info: message(content, timestamp, attachment), user(avatar, name)
+- V list: last 50 messages
+  - V info: message(content, timestamp), user(avatar, name)
 - action: scroll up to load more 20 messages
-- use Action Cable to communicate with server
-- form: 
-  - message content
-  - submit button (or press enter)
-- update latest messages in this chat continuously
+- V use Action Cable to communicate with server
+- V form: 
+  - V message content
+  - V submit button (or press enter)
+- V update latest messages in this chat continuously
+- cache with redis
 
 # Models Spec
 
 ## User
 
-- devise user attributes
-- avatar, name, status
-- has many users
+- V devise user attributes
+- V avatar, name, status
+- V has many chats
 
 ## Chat
 
-- title
-- has many users
-- has many messages
+- V title
+- V has many users
+- V has many messages
 
 ## Message
 
-- id, content, relative id, sender id, recipient id
-- belongs to chat
-- belongs to sender
-- belongs to recipient
+- V id, content, relative id, sender id, recipient id
+- V belongs to chat
+- V belongs to sender
+- V belongs to recipient
 - methods: last, next, from
 - save to redis instead of to db, a cron job saves messages in redis into db periodically
 
@@ -92,4 +93,4 @@ NotLine
 
 # ActionCable
 
-- can authorize user using the chat
+- V can authorize user using the chat
