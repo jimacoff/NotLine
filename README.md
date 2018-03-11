@@ -43,23 +43,23 @@ NotLine
 
 ## Chat List
 
-- url: `/chats/`
-- root redirect to this page
+- V url: `/chats/`
+- V root redirect to this page
 - list: all chats of current user, paged per 20, sort by update time
   - info: last message, user(avatar, name)
   - link: `/chats/:id`
+- update latest messages from all people continuously
 
-## Chat Room
-
-- url: `/chats/:id` or `/users/:user_id/chat` (redirect to corresponding chat)
+## Chat Room 
+- V url: `/chats/:id` or `/users/:user_id/chat` (redirect to corresponding chat)
 - list: last 50 messages
   - info: message(content, timestamp, attachment), user(avatar, name)
 - action: scroll up to load more 20 messages
 - use Action Cable to communicate with server
 - form: 
   - message content
-  - upload image
   - submit button (or press enter)
+- update latest messages in this chat continuously
 
 # Models Spec
 
@@ -71,13 +71,16 @@ NotLine
 
 ## Chat
 
+- title
 - has many users
 - has many messages
 
 ## Message
 
+- id, content, relative id, sender id, recipient id
 - belongs to chat
-- belongs to attachment
+- belongs to sender
+- belongs to recipient
 - methods: last, next, from
 - save to redis instead of to db, a cron job saves messages in redis into db periodically
 
@@ -86,3 +89,7 @@ NotLine
 - decorates Message
 - methods: last, next, from
 - fetch messages from redis if exists, delegate to Message otherwise
+
+# ActionCable
+
+- can authorize user using the chat

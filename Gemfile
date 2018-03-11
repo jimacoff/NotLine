@@ -20,6 +20,7 @@ gem 'slim-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
+gem 'webpacker'
 
 group :development, :test do
   gem 'rspec-rails'
