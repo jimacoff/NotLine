@@ -1,7 +1,7 @@
 <template>
     <div id="vueapp" class="container chat">
         <div class="row" style="height: 100%">
-            <div class="col-lg-3 chat-list">
+            <div class="col-md-3 chat-list">
                 <div class="chat-listentry" v-for="chat in chats"> 
                     <div class="card" :key="chat.id">
                         <div class="card-body">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-9 chat-room">
+            <div class="col-md-9 chat-room">
                 <Chatroom v-on:send="sendHandler" v-on:fetch="fetchHandler" :chat="currentChat" :currentUser="currentUser" :key="currentChat.id" v-if="currentChat != null"/>
             </div>
         </div>
