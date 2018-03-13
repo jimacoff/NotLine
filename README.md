@@ -1,6 +1,20 @@
 NotLine
 ===
 
+# Install
+
+- Ruby: 2.4.1
+- Rails: 5.1.5
+- Node.js: v8.4.0
+
+```
+$ bundle install
+$ yarn install
+$ rails db:create
+$ rails db:schema:load
+$ rails server
+```
+
 # Pages Spec
 
 ## Navbar
@@ -39,10 +53,9 @@ NotLine
 
 - V url: `/chats/`
 - V root redirect to this page
-- list: all chats of current user, paged per 20, sort by update time
-  - info: last message, user(avatar, name)
-  - link: `/chats/:id`
-- update latest messages from all people continuously
+- V list: all chats of current user, paged per 20, sort by update time
+  - V info: last message, user(avatar, name)
+- V update latest messages from all people continuously
 
 ## Chat Room 
 - V url: `/chats/:id` or `/users/:user_id/chat` (redirect to corresponding chat)
