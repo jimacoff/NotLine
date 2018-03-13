@@ -29,8 +29,13 @@ group :development, :test do
   gem 'factory_bot_rails', require: false
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'shoulda-matchers'
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm', require: false
+  gem 'capistrano-rake', require: false
+  gem 'capistrano-nvm', require: false
+  gem 'capistrano3-puma', require: false
+  gem 'capistrano-locally', require: false
 end
 
 group :development do

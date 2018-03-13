@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: NotLine_production
-  username: NotLine
-  password: <%= ENV['NOTLINE_DATABASE_PASSWORD'] %>
