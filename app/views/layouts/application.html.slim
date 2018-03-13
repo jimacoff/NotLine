@@ -33,5 +33,9 @@ html
               = link_to "Sign in", new_user_session_path, class: "nav-link"
             li
               = link_to "Sign up", new_user_registration_path, class: "nav-link"
-    .main.container
-      = yield
+    - if controller.controller_name == 'chats'
+      .container.app-main
+        = yield
+    - else
+      .container.main
+        = yield

@@ -1,0 +1,7 @@
+json = {
+  id: chat.id,
+  title: chat.title,
+  partner: render(partial: 'users/user', locals: {user: partner}),
+  last_message: render(partial: 'messages/message', locals: {message: chat.messages.last}),
+  updated_at: chat.updated_at,
+}

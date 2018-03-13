@@ -3,15 +3,14 @@ class ChatsController < ApplicationController
 
   def index
     @chats = current_user.chats.order(updated_at: :desc)
+    @initial_chat_id = params[:initial_chat_id]
   end
 
   def show
     @chat = Chat.find(params[:id])
-    @messages = @chat.messages.order(id: :desc).limit(50)
     @partner = @chat.partner_of(current_user)
     respond_to do |format|
       format.json
-      format.html
     end
   end
 end

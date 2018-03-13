@@ -9,7 +9,8 @@ class UsersController < ApplicationController
   end
 
   def chat
+    partner = User.find(params[:id])
     chat = current_user.find_or_create_chat_with(User.find(params[:id]))
-    redirect_to chat_path(chat)
+    redirect_to chats_path(initial_chat: chat.id)
   end
 end

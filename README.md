@@ -48,10 +48,9 @@ NotLine
 - V url: `/chats/:id` or `/users/:user_id/chat` (redirect to corresponding chat)
 - V list: last 50 messages
   - V info: message(content, timestamp), user(avatar, name)
-- action: click to load more 20 messages
-- auto scroll to bottom if not viewing old messages
+- V action: click to load more messages
+- V auto scroll to bottom if not viewing old messages
 - show scroll to bottom if viewing old messages
-- fix navbar position
 - V use Action Cable to communicate with server
 - V form: 
   - V message content
@@ -93,5 +92,7 @@ NotLine
 - group chat
 - attachment
 - link detection
-- integrate chat to one page
+- V integrate chat to one page
 - show how many unreads
+- V store messages together
+- V messages in newly created chat

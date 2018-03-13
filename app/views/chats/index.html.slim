@@ -1,3 +1,5 @@
 - content_for(:title) { "Chat" }
-h1 = content_for(:title) 
-hr
+- content_for(:app_layout) { true }
+div#chats-data data-json="#{render(template: "chats/index.json.jb")}" style="display:none"
+div#vueapp
+= javascript_pack_tag 'chat' 

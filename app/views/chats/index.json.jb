@@ -1,0 +1,10 @@
+json = {
+  chats: [],
+  current_user: render(partial: 'users/user', locals: {user: current_user}),
+  default_chat: nil,
+  initial_chat_id: @initial_chat_id,
+}
+json[:chats] = @chats.map {|chat| 
+  render(partial: 'chat', locals: { chat: chat, partner: chat.partner_of(current_user)})
+}
+json

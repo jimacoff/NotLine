@@ -1,6 +1,0 @@
-- content_for(:title) { "Chat with #{@partner.name}" }
-h1 = content_for(:title)
-hr
-div#chat-data data-json="#{render(template: 'chats/show.json')}" style="display:none"
-div#vueapp
-= javascript_pack_tag 'chat' 
