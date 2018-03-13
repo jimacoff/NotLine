@@ -126,6 +126,7 @@ module.exports = {
                 })
                 if (!chat) {
                     chat = await this.fetchChatFromAPI(payload.message.chat_id)
+                    this.chats.push(chat)
                 }
                 chat.updated_at = Date.now()
                 chat.last_message = payload.message

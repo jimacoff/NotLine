@@ -96,3 +96,6 @@ NotLine
 - show how many unreads
 - V store messages together
 - V messages in newly created chat
+
+# Bugs
+- initial chat id not working 

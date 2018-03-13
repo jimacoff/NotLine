@@ -11,16 +11,13 @@ import gravatar from 'gravatar'
 
 Vue.use(UUID)
 Vue.use(TurbolinksAdapter)
-
-document.addEventListener('turbolinks:load', function() {
-    Vue.component('Message', Message)
-    Vue.component('Chatroom', Chatroom)
-    window.moment = moment
-    window.gravatar = gravatar
-    const pageData = document.getElementById("chats-data").dataset.json
-    const vueapp = new Vue({
-        el: '#vueapp',
-        template: `<App :pageData='${pageData}'/>`,
-        components: { App }
-    })
+Vue.component('Message', Message)
+Vue.component('Chatroom', Chatroom)
+window.moment = moment
+window.gravatar = gravatar
+const pageData = document.getElementById("chats-data").dataset.json
+const vueapp = new Vue({
+    el: '#vueapp',
+    template: `<App :pageData='${pageData}'/>`,
+    components: { App }
 })
