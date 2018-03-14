@@ -4,6 +4,7 @@ lock "~> 3.10.1"
 set :application, "NotLine"
 set :repo_url, "git@github.com:joshua5201/NotLine.git"
 
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 

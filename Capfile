@@ -34,6 +34,7 @@ require "capistrano/rails/assets"
 require "capistrano/rails/migrations"
 require "capistrano/rake"
 require "capistrano/puma"
+install_plugin Capistrano::Puma
 require "capistrano/locally"
 # require "capistrano/passenger"
 
