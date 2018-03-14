@@ -112,3 +112,4 @@ $ rails server
 
 # Bugs
 - initial chat id not working 
+- timezone
